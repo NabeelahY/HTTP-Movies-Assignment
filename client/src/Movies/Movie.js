@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useRouteMatch } from 'react-router-dom';
+import { useRouteMatch, useHistory } from 'react-router-dom';
 import MovieCard from './MovieCard';
 
 function Movie({ addToSavedList }) {
+  let history = useHistory();
   const [movie, setMovie] = useState(null);
   const match = useRouteMatch();
 
@@ -32,6 +33,14 @@ function Movie({ addToSavedList }) {
 
       <div className='save-button' onClick={saveMovie}>
         Save
+      </div>
+
+      <div
+        className='edit-button'
+        // Make sure to push to your edit form on your edit button
+        onClick={() => history.push(`/update-movies/${movie.id}`)}
+      >
+        Edit
       </div>
     </div>
   );
