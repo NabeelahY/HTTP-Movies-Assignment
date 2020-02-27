@@ -59,7 +59,9 @@ export default function MovieForm({ setMovieList, movieList }) {
   return (
     <div>
       <form onSubmit={(e) => onSubmit(e, idFromUrl)}>
-        {/* FINAL STEP: use the submit handler function on the form and pass in the "urlFromUrl" */}
+        {/* FINAL STEP: use the submit handler function on the form and pass in the "urlFromUrl" 
+            Do not do the same mistake I made 😭
+        */}
         <label>Title:</label>
         {/* STEP 2- I: Make sure to include these attributes in the input fields. 
             Ensure that each name attribute tallies to
